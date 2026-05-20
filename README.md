@@ -21,7 +21,7 @@ Source stills are **TIFF** in `images/`; **PNG** copies in `images/png/` (downsc
 
 _Source: [https://esawebb.org/images/potm2505a/](https://esawebb.org/images/potm2505a/)_
 
-**Galaxy cluster Abell S1063** (*A glimpse of the distant past*, 6920×6615, TIFF) is the reference still for this session—a deep-field **James Webb Space Telescope** NIRCam view of the cluster in Grus, where gravitational lensing magnifies distant background galaxies. Like the artworks in [Exposing-the-Unseen-Layers-of-Paintings](https://github.com/NeuroGamingLab/Exposing-the-Unseen-Layers-of-Paintings), it is read as a dense field of RGB samples, clustered with **MiniBatchKMeans** into representative swatches so palette structure can be compared across layers without hand-tuning every hue. The derived stills in the next section are alternate layer views of the same source, produced by the same unsupervised palette-compression stack.
+**Galaxy cluster Abell S1063** (*A glimpse of the distant past*, 6920×6615, TIFF) is the reference still for this session—a deep-field **James Webb Space Telescope** NIRCam view of the cluster, where gravitational lensing magnifies distant background galaxies. 
 
 ## Derived stills (2 × 11)
 
@@ -42,7 +42,6 @@ Each tile uses the explanation above: a **MiniBatchKMeans** palette summary of *
 
 ## Related work
 
-- [NeuroGamingLab/Exposing-the-Unseen-Layers-of-Paintings](https://github.com/NeuroGamingLab/Exposing-the-Unseen-Layers-of-Paintings) — multi-artwork collages from the same **MiniBatchKMeans** palette-compression pipeline.
 - [NeuroGamingLab/Neuro-Exposing-Layers-QuestionMarkGalaxy](https://github.com/NeuroGamingLab/Neuro-Exposing-Layers-QuestionMarkGalaxy) — same layer-exposure layout on the Question Mark Galaxy (**questionmark1**).
 
 ---
