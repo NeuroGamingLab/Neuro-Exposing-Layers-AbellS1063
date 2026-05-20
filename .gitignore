@@ -1,0 +1,13 @@
+# Local notes (not part of the published repo)
+instructions.txt
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+
+# Editor / OS
+*.swp
+*~
+.idea/
+.vscode/
