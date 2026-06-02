@@ -20,6 +20,135 @@ The repository is organized as **one folder per subject** (`images/`). Each file
 
 Source stills are **TIFF** in `images/`; **PNG** copies in `images/png/` (downscaled to 1600 px on the long edge) are used below so GitHub can render the gallery inline. Enhanced outputs live in `images/potm2505a-enhanced/` with matching PNG previews in `images/potm2505a-enhanced/png/`.
 
+## Palette pipeline (with matrix reduction)
+
+Conceptual flow (from **`enhancement-instruction.txt`**, as implemented in **`MatrixNNEngine9.py`**):
+
+```text
+pixels-org/*.png  →  colorgram (dominant colors, optional 255−RGB)
+        ↓
+optional matrix reduction  (--reduction, --reduction-target)
+  • PCA / NMF / ICA  → mainly on palette rows (compress / denoise swatches)
+  • Robust PCA (rpca) → palette outlier drop or image low-rank luminance smooth
+        ↓
+target image(s) in images/  (--image-glob, optional --max-side)
+        ↓
+nearest RGB snap (cKDTree)  →  images/saved/
+```
+
+**Outputs**
+
+| Mode | Files |
+|------|--------|
+| `per-palette` | `{timestamp}_{source_stem}.{ext}` — one file per painting palette (no `_via_<name>` suffix). |
+| `merged` | `{timestamp}_{source_stem}_merged_palette.{ext}` — all palette colors combined. |
+
+Default target image: **`potm2505a.tif`** (6920×6615 RGB TIFF under `images/`). Use **`--max-side 2048`** (or similar) for faster trials. Enhanced stills in this repo are published under `images/potm2505a-enhanced/`.
+
+### Run
+
+From the pipeline repo root (or pass `--root /path/to/pythonProject89Plus-2`):
+
+```bash
+python MatrixNNEngine9.py --help
+```
+
+**Default** — per-palette + merged on `potm2505a.tif`:
+
+```bash
+python MatrixNNEngine9.py
+```
+
+**Recommended first run** on large TIFFs:
+
+```bash
+python MatrixNNEngine9.py --max-side 2048
+```
+
+**Merged only** (single output):
+
+```bash
+python MatrixNNEngine9.py --mode merged --max-side 2048
+```
+
+**Other targets** (PNG, GOES SUVI, etc.):
+
+```bash
+python MatrixNNEngine9.py --image-glob "GOES-16SUVI-2024-10-11-02-04-36.png"
+python MatrixNNEngine9.py --image-glob "*.png" --mode merged --max-side 4096
+```
+
+**Stricter snapping** — keep original pixel if nearest palette color is farther than 45 in RGB L2:
+
+```bash
+python MatrixNNEngine9.py --max-rgb-distance 45 --fallback original
+```
+
+**Jupyter preview** (requires `ipython`):
+
+```bash
+python MatrixNNEngine9.py --display
+```
+
+### Matrix reduction (`enhancement-instruction.txt`)
+
+Background and motivation are in **`enhancement-instruction.txt`**. In this project, reduction is **feature engineering before palette snap**, not RNN/LSTM/RL (those are noted as possible future consumers of the same preprocessing idea).
+
+| `--reduction` | `--reduction-target palette` | `--reduction-target image` |
+|---------------|------------------------------|----------------------------|
+| `pca` | Cluster palette colors in PC space → fewer representative swatches | Mild RGB denoise via subsampled PCA |
+| `nmf` | Non-negative basis rows → parts-based palette | Light correction from subsampled NMF |
+| `ica` | Independent directions → RGB palette samples | Light correction from subsampled ICA |
+| `rpca` | Drop outlier palette swatches (sparse entries) | Low-rank luminance (truncated SVD), then recolor |
+| `none` | No reduction (default) | No reduction |
+
+Shared flags: **`--reduction-components`** (default `64`), **`--reduction-target`** `palette` \| `image` \| `both`.
+
+**Examples**
+
+```bash
+# Compress merged palette before snap (large colorgram lists)
+python MatrixNNEngine9.py --mode merged --max-side 2048 \
+  --reduction pca --reduction-target palette --reduction-components 64
+
+# Smooth image structure, then snap (Robust PCA / low-rank luma)
+python MatrixNNEngine9.py --reduction rpca --reduction-target image \
+  --reduction-components 12 --max-side 2048
+
+# Both palette and image preprocessing
+python MatrixNNEngine9.py --reduction pca --reduction-target both --reduction-components 32
+```
+
+### `MatrixNNEngine9.py` flags
+
+| Flag | Meaning |
+|------|--------|
+| `--root` | Project root; palette/image paths are relative to this. |
+| `--palette-dir`, `--palette-glob` | Palette paintings (default `pixels-org`, `*.png`). |
+| `--image-dir`, `--image-glob` | Target images (default `images/`, `potm2505a.tif`). |
+| `--output-dir` | Output folder (default `images/saved`). |
+| `--colors` | Dominant colors per palette image via `colorgram` (default `1000`). |
+| `--no-reverse` | Skip `255 − rgb` after extraction. |
+| `--mode` | `both` \| `per-palette` \| `merged`. |
+| `--tile-height` | Strip height for streaming large images (default `512`). |
+| `--max-rgb-distance` | Optional L2 RGB gate; use with `--fallback`. |
+| `--fallback` | `original` \| `white` \| `carry` when gate rejects a snap. |
+| `--max-side` | Downscale if longest side exceeds N pixels. |
+| `--sleep` | Seconds between writes (default `0`). |
+| `--reduction` | `none` \| `pca` \| `nmf` \| `ica` \| `rpca`. |
+| `--reduction-target` | `palette` \| `image` \| `both`. |
+| `--reduction-components` | Components / rank / swatch count (default `64`). |
+| `--display` | Inline display in IPython. |
+
+See **`palette-pipeline-checklist.md`** for a printable run/verify checklist.
+
+### Notes (palette pipeline)
+
+- Matching is **nearest-neighbor in RGB Euclidean space** (`cKDTree`), not legacy `difflib` string matching on RGB tuples.
+- **`enhancement-instruction.txt`** also discusses RNN/LSTM/RL; those are **not** wired into `MatrixNNEngine9.py` today—only the reduction preprocessors are.
+- With `--max-rgb-distance`, **`carry`** uses the previous output pixel in the same **column**, scanning **top to bottom** within each vertical strip (`x` outer, `y` inner).
+- Legacy notebook-style scripts (`MatrixNNEngine9v2.py`, old monolithic loops) remain for reference; prefer **`MatrixNNEngine9.py`** for new runs.
+
 ## Original — `Galaxy Cluster Abell S1063`
 
 ![potm2505a-ORIGINAL.tif](images/png/potm2505a-ORIGINAL.png)
@@ -47,7 +176,7 @@ Each tile uses the explanation above: a **MiniBatchKMeans** palette summary of *
 
 ## Enhanced layers — `potm2505a-enhanced`
 
-A second pass on **potm2505a** with enhanced palette exposure: **23** timestamp-prefixed layer stills, one **merged palette** composite, and a **4 × 6 collage** overview. Each tile uses the same explanation as the original—a **MiniBatchKMeans** palette summary of the Abell S1063 deep field, exposed as a discrete layer still.
+A second pass on **potm2505a** via the **palette pipeline with matrix reduction** (`MatrixNNEngine9.py`): painting palettes extracted with **colorgram**, optional **PCA / NMF / ICA / Robust PCA** preprocessing, then **nearest RGB snap** on the Webb deep field. This set includes **23** per-palette layer stills, one **merged palette** composite, and a **4 × 6 collage** overview.
 
 ### Collage overview
 
