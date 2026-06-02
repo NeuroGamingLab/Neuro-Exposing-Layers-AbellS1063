@@ -12,8 +12,13 @@ The repository is organized as **one folder per subject** (`images/`). Each file
 | Derived stills (timestamp-prefixed `*-potm2505a.tif`) | 22 |
 | Gallery layout | 2 × 11 |
 | README previews (`images/png/`) | PNG exports of each TIFF |
+| Enhanced stills (`images/potm2505a-enhanced/*_potm2505a.tif`) | 23 |
+| Merged palette (`*_merged_palette.tif`) | 1 |
+| Enhanced collage (`potm2505a_collage_4x6.png`) | 1 |
+| Enhanced gallery layout | 2 × 12 |
+| Enhanced README previews (`images/potm2505a-enhanced/png/`) | PNG exports of each enhanced TIFF |
 
-Source stills are **TIFF** in `images/`; **PNG** copies in `images/png/` (downscaled to 1600 px on the long edge) are used below so GitHub can render the gallery inline.
+Source stills are **TIFF** in `images/`; **PNG** copies in `images/png/` (downscaled to 1600 px on the long edge) are used below so GitHub can render the gallery inline. Enhanced outputs live in `images/potm2505a-enhanced/` with matching PNG previews in `images/potm2505a-enhanced/png/`.
 
 ## Original — `Galaxy Cluster Abell S1063`
 
@@ -39,6 +44,30 @@ Each tile uses the explanation above: a **MiniBatchKMeans** palette summary of *
 | [![1779160601762002-potm2505a.png](images/png/1779160601762002-potm2505a.png)](images/png/1779160601762002-potm2505a.png)<br>1779160601762002-potm2505a.tif | [![1779161986873256-potm2505a.png](images/png/1779161986873256-potm2505a.png)](images/png/1779161986873256-potm2505a.png)<br>1779161986873256-potm2505a.tif |
 | [![177916338562231-potm2505a.png](images/png/177916338562231-potm2505a.png)](images/png/177916338562231-potm2505a.png)<br>177916338562231-potm2505a.tif | [![17791648458670888-potm2505a.png](images/png/17791648458670888-potm2505a.png)](images/png/17791648458670888-potm2505a.png)<br>17791648458670888-potm2505a.tif |
 | [![1779166269958907-potm2505a.png](images/png/1779166269958907-potm2505a.png)](images/png/1779166269958907-potm2505a.png)<br>1779166269958907-potm2505a.tif | [![1779189379621205-potm2505a.png](images/png/1779189379621205-potm2505a.png)](images/png/1779189379621205-potm2505a.png)<br>1779189379621205-potm2505a.tif |
+
+## Enhanced layers — `potm2505a-enhanced`
+
+A second pass on **potm2505a** with enhanced palette exposure: **23** timestamp-prefixed layer stills, one **merged palette** composite, and a **4 × 6 collage** overview. Each tile uses the same explanation as the original—a **MiniBatchKMeans** palette summary of the Abell S1063 deep field, exposed as a discrete layer still.
+
+### Collage overview
+
+![potm2505a_collage_4x6.png](images/potm2505a-enhanced/png/potm2505a_collage_4x6.png)
+
+### Enhanced stills (2 × 12)
+
+| [![1780431683166_potm2505a.png](images/potm2505a-enhanced/png/1780431683166_potm2505a.png)](images/potm2505a-enhanced/png/1780431683166_potm2505a.png)<br>1780431683166_potm2505a.tif | [![1780431690407_potm2505a.png](images/potm2505a-enhanced/png/1780431690407_potm2505a.png)](images/potm2505a-enhanced/png/1780431690407_potm2505a.png)<br>1780431690407_potm2505a.tif |
+| --- | --- |
+| [![1780431697780_potm2505a.png](images/potm2505a-enhanced/png/1780431697780_potm2505a.png)](images/potm2505a-enhanced/png/1780431697780_potm2505a.png)<br>1780431697780_potm2505a.tif | [![1780431704827_potm2505a.png](images/potm2505a-enhanced/png/1780431704827_potm2505a.png)](images/potm2505a-enhanced/png/1780431704827_potm2505a.png)<br>1780431704827_potm2505a.tif |
+| [![1780431712174_potm2505a.png](images/potm2505a-enhanced/png/1780431712174_potm2505a.png)](images/potm2505a-enhanced/png/1780431712174_potm2505a.png)<br>1780431712174_potm2505a.tif | [![1780431719099_potm2505a.png](images/potm2505a-enhanced/png/1780431719099_potm2505a.png)](images/potm2505a-enhanced/png/1780431719099_potm2505a.png)<br>1780431719099_potm2505a.tif |
+| [![1780431726328_potm2505a.png](images/potm2505a-enhanced/png/1780431726328_potm2505a.png)](images/potm2505a-enhanced/png/1780431726328_potm2505a.png)<br>1780431726328_potm2505a.tif | [![1780431733741_potm2505a.png](images/potm2505a-enhanced/png/1780431733741_potm2505a.png)](images/potm2505a-enhanced/png/1780431733741_potm2505a.png)<br>1780431733741_potm2505a.tif |
+| [![1780431740568_potm2505a.png](images/potm2505a-enhanced/png/1780431740568_potm2505a.png)](images/potm2505a-enhanced/png/1780431740568_potm2505a.png)<br>1780431740568_potm2505a.tif | [![1780431747337_potm2505a.png](images/potm2505a-enhanced/png/1780431747337_potm2505a.png)](images/potm2505a-enhanced/png/1780431747337_potm2505a.png)<br>1780431747337_potm2505a.tif |
+| [![1780431754480_potm2505a.png](images/potm2505a-enhanced/png/1780431754480_potm2505a.png)](images/potm2505a-enhanced/png/1780431754480_potm2505a.png)<br>1780431754480_potm2505a.tif | [![1780431760989_potm2505a.png](images/potm2505a-enhanced/png/1780431760989_potm2505a.png)](images/potm2505a-enhanced/png/1780431760989_potm2505a.png)<br>1780431760989_potm2505a.tif |
+| [![1780431767292_potm2505a.png](images/potm2505a-enhanced/png/1780431767292_potm2505a.png)](images/potm2505a-enhanced/png/1780431767292_potm2505a.png)<br>1780431767292_potm2505a.tif | [![1780431774578_potm2505a.png](images/potm2505a-enhanced/png/1780431774578_potm2505a.png)](images/potm2505a-enhanced/png/1780431774578_potm2505a.png)<br>1780431774578_potm2505a.tif |
+| [![1780431781525_potm2505a.png](images/potm2505a-enhanced/png/1780431781525_potm2505a.png)](images/potm2505a-enhanced/png/1780431781525_potm2505a.png)<br>1780431781525_potm2505a.tif | [![1780431788557_potm2505a.png](images/potm2505a-enhanced/png/1780431788557_potm2505a.png)](images/potm2505a-enhanced/png/1780431788557_potm2505a.png)<br>1780431788557_potm2505a.tif |
+| [![1780431795901_potm2505a.png](images/potm2505a-enhanced/png/1780431795901_potm2505a.png)](images/potm2505a-enhanced/png/1780431795901_potm2505a.png)<br>1780431795901_potm2505a.tif | [![1780431803023_potm2505a.png](images/potm2505a-enhanced/png/1780431803023_potm2505a.png)](images/potm2505a-enhanced/png/1780431803023_potm2505a.png)<br>1780431803023_potm2505a.tif |
+| [![1780431810030_potm2505a.png](images/potm2505a-enhanced/png/1780431810030_potm2505a.png)](images/potm2505a-enhanced/png/1780431810030_potm2505a.png)<br>1780431810030_potm2505a.tif | [![1780431817294_potm2505a.png](images/potm2505a-enhanced/png/1780431817294_potm2505a.png)](images/potm2505a-enhanced/png/1780431817294_potm2505a.png)<br>1780431817294_potm2505a.tif |
+| [![1780431824575_potm2505a.png](images/potm2505a-enhanced/png/1780431824575_potm2505a.png)](images/potm2505a-enhanced/png/1780431824575_potm2505a.png)<br>1780431824575_potm2505a.tif | [![1780431831389_potm2505a.png](images/potm2505a-enhanced/png/1780431831389_potm2505a.png)](images/potm2505a-enhanced/png/1780431831389_potm2505a.png)<br>1780431831389_potm2505a.tif |
+| [![1780431838628_potm2505a.png](images/potm2505a-enhanced/png/1780431838628_potm2505a.png)](images/potm2505a-enhanced/png/1780431838628_potm2505a.png)<br>1780431838628_potm2505a.tif | [![1780431845660_potm2505a_merged_palette.png](images/potm2505a-enhanced/png/1780431845660_potm2505a_merged_palette.png)](images/potm2505a-enhanced/png/1780431845660_potm2505a_merged_palette.png)<br>1780431845660_potm2505a_merged_palette.tif |
 
 ## Related work
 

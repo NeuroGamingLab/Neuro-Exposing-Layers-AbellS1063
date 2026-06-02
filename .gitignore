@@ -1,6 +1,9 @@
 # Local notes (not part of the published repo)
 instructions.txt
 
+# Source stills (PNG previews in images/**/png/ are used for GitHub)
+*.tif
+
 .DS_Store
 .AppleDouble
 .LSOverride
