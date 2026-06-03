@@ -16,7 +16,7 @@ The repository is organized as **one folder per subject** (`images/`). Each file
 | Enhanced stills (`images/potm2505a-enhanced/*_potm2505a.tif`) | 23                                |
 | Merged palette (`*_merged_palette.tif`)                       | 1                                 |
 | Enhanced collage (`potm2505a_collage_4x6.png`)                | 1                                 |
-| Enhanced gallery layout                                       | 2 × 12                            |
+| Enhanced gallery layout                                       | 2 × 11 (+ merged palette below)   |
 | Enhanced README previews (`images/potm2505a-enhanced/png/`)   | PNG exports of each enhanced TIFF |
 
 
@@ -193,11 +193,11 @@ A second pass on **potm2505a** via the **palette pipeline with matrix reduction*
 
 ![potm2505a_collage_4x6.png](images/potm2505a-enhanced/png/potm2505a_collage_4x6.png)
 
-### Enhanced stills (2 × 12)
+### Enhanced stills (2 × 11)
 
-
-| [![1780431683166_potm2505a.png](images/potm2505a-enhanced/png/1780431683166_potm2505a.png)](images/potm2505a-enhanced/png/1780431683166_potm2505a.png)<br>1780431683166_potm2505a.tif | [![1780431690407_potm2505a.png](images/potm2505a-enhanced/png/1780431690407_potm2505a.png)](images/potm2505a-enhanced/png/1780431690407_potm2505a.png)<br>1780431690407_potm2505a.tif |
+| | |
 | --- | --- |
+| [![1780431683166_potm2505a.png](images/potm2505a-enhanced/png/1780431683166_potm2505a.png)](images/potm2505a-enhanced/png/1780431683166_potm2505a.png)<br>1780431683166_potm2505a.tif | [![1780431690407_potm2505a.png](images/potm2505a-enhanced/png/1780431690407_potm2505a.png)](images/potm2505a-enhanced/png/1780431690407_potm2505a.png)<br>1780431690407_potm2505a.tif |
 | [![1780431697780_potm2505a.png](images/potm2505a-enhanced/png/1780431697780_potm2505a.png)](images/potm2505a-enhanced/png/1780431697780_potm2505a.png)<br>1780431697780_potm2505a.tif | [![1780431704827_potm2505a.png](images/potm2505a-enhanced/png/1780431704827_potm2505a.png)](images/potm2505a-enhanced/png/1780431704827_potm2505a.png)<br>1780431704827_potm2505a.tif |
 | [![1780431712174_potm2505a.png](images/potm2505a-enhanced/png/1780431712174_potm2505a.png)](images/potm2505a-enhanced/png/1780431712174_potm2505a.png)<br>1780431712174_potm2505a.tif | [![1780431719099_potm2505a.png](images/potm2505a-enhanced/png/1780431719099_potm2505a.png)](images/potm2505a-enhanced/png/1780431719099_potm2505a.png)<br>1780431719099_potm2505a.tif |
 | [![1780431726328_potm2505a.png](images/potm2505a-enhanced/png/1780431726328_potm2505a.png)](images/potm2505a-enhanced/png/1780431726328_potm2505a.png)<br>1780431726328_potm2505a.tif | [![1780431733741_potm2505a.png](images/potm2505a-enhanced/png/1780431733741_potm2505a.png)](images/potm2505a-enhanced/png/1780431733741_potm2505a.png)<br>1780431733741_potm2505a.tif |
@@ -208,7 +208,14 @@ A second pass on **potm2505a** via the **palette pipeline with matrix reduction*
 | [![1780431795901_potm2505a.png](images/potm2505a-enhanced/png/1780431795901_potm2505a.png)](images/potm2505a-enhanced/png/1780431795901_potm2505a.png)<br>1780431795901_potm2505a.tif | [![1780431803023_potm2505a.png](images/potm2505a-enhanced/png/1780431803023_potm2505a.png)](images/potm2505a-enhanced/png/1780431803023_potm2505a.png)<br>1780431803023_potm2505a.tif |
 | [![1780431810030_potm2505a.png](images/potm2505a-enhanced/png/1780431810030_potm2505a.png)](images/potm2505a-enhanced/png/1780431810030_potm2505a.png)<br>1780431810030_potm2505a.tif | [![1780431817294_potm2505a.png](images/potm2505a-enhanced/png/1780431817294_potm2505a.png)](images/potm2505a-enhanced/png/1780431817294_potm2505a.png)<br>1780431817294_potm2505a.tif |
 | [![1780431824575_potm2505a.png](images/potm2505a-enhanced/png/1780431824575_potm2505a.png)](images/potm2505a-enhanced/png/1780431824575_potm2505a.png)<br>1780431824575_potm2505a.tif | [![1780431831389_potm2505a.png](images/potm2505a-enhanced/png/1780431831389_potm2505a.png)](images/potm2505a-enhanced/png/1780431831389_potm2505a.png)<br>1780431831389_potm2505a.tif |
-| [![1780431838628_potm2505a.png](images/potm2505a-enhanced/png/1780431838628_potm2505a.png)](images/potm2505a-enhanced/png/1780431838628_potm2505a.png)<br>1780431838628_potm2505a.tif | [![1780431845660_potm2505a_merged_palette.png](images/potm2505a-enhanced/png/1780431845660_potm2505a_merged_palette.png)](images/potm2505a-enhanced/png/1780431845660_potm2505a_merged_palette.png)<br>1780431845660_potm2505a_merged_palette.tif |
+
+### Layer still 23
+
+![1780431838628_potm2505a.tif](images/potm2505a-enhanced/png/1780431838628_potm2505a.png)
+
+### Merged palette
+
+![1780431845660_potm2505a_merged_palette.tif](images/potm2505a-enhanced/png/1780431845660_potm2505a_merged_palette.png)
 
 
 
